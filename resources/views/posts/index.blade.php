@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 
     <div class="d-flex justify-content-end mb-2">
@@ -15,6 +16,7 @@
     <thead>
     <th>Image</th>
     <th>Title</th>
+    <th>Category</th>
     <th></th>
     <th></th>
     </thead>
@@ -30,6 +32,11 @@
                 {{$post->title}}
             </td>
 
+            <td>
+                <a href="{{route('categories.edit',$post->category->id)}}"> {{$post->category->name }}</a>
+
+            </td>
+
             @if(!$post->trashed())
                 <td>
                     <a href="{{route('posts.edit',$post->id)}}" class="btn btn-info btn-sm">Edit</a>
@@ -41,7 +48,7 @@
                 <form action="{{route('posts.destroy',$post->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit"  class="btn btn-danger btn-sm">Trash</button>
+                    <button type="submit"  class="btn btn-danger btn-sm">Delete</button>
                 </form>
             </td>
 

@@ -1,4 +1,11 @@
 @extends('layouts.app')
+@section('css')
+    <style>
+        .btn-info{
+            color: #fff;
+        }
+    </style>
+@endsection
 
 @section('content')
 
@@ -29,11 +36,17 @@
                 {{$post->title}}
             </td>
 
-            @if(!$post->trashed())
                 <td>
-                    <a href="{{route('posts.edit',$post->id)}}" class="btn btn-info btn-sm">Edit</a>
+                    <form action="{{route('restore-posts',$post->id)}}" method="post">
+
+                        @csrf
+                        @method('PUT')
+{{--                        <a href="{{route('posts.restore',$post->id)}}" class="btn btn-info btn-sm">Restore</a>--}}
+
+                        <button type="submit" class="btn btn-info btn-sm">Restore</button>
+
+                    </form>
                 </td>
-            @endif
 
 
             <td>
