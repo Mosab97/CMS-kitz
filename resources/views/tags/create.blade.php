@@ -18,7 +18,7 @@
                 @endif
                 <div class="form-group">
                     <label for="Name">Name</label>
-                    <input type="text" class="form-control" id="Name" name="name" value="{{isset($tag)? $tag->name : ''}}">
+                    <input  type="text" class="form-control" id="Name" name="name" value="{{isset($tag)? $tag->name : ''}}" autofocus>
                 </div>
                 <div class="form-body">
                     <button class="btn btn-success">

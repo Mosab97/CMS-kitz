@@ -7,6 +7,7 @@ use App\Http\Requests\Categories\UpdateCategoriesRequest;
 use App\Http\Requests\Posts\CreatePostsRequest;
 use App\Http\Requests\Posts\UpdatePostsRequest;
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -36,7 +37,8 @@ class PostsController extends Controller
     public function create()
     {
         return view('posts.create',[
-            'categories' => Category::get()
+            'categories' => Category::get(),
+            'tags' => Tag::all()
         ]);
     }
 
@@ -49,7 +51,7 @@ class PostsController extends Controller
     public function store(CreatePostsRequest $request)
     {
         $image = $request->image->store('posts');
-        Post::create([
+        $post = Post::create([
             'title' => $request->title,
             'description' => $request->description,
             'content' => $request->content,
@@ -59,6 +61,10 @@ class PostsController extends Controller
 
         ]);
 
+        if($request->tags)
+        {
+            $post->tags()->attach($request->tags);
+        }
         session()->flash('success','Post Created Successfully');
         return  redirect(route('posts.index'));
     }
@@ -84,7 +90,9 @@ class PostsController extends Controller
     {
         return  view('posts.create',[
             'post' =>$post,
-            'categories' => Category::get()
+            'categories' => Category::get(),
+            'tags' => Tag::all()
+
 
         ]);
     }
@@ -104,8 +112,12 @@ class PostsController extends Controller
             $image  = $request->image->store('posts');
 //            Storage::delete($post->image);
             $post->deleteImage();
+            $data['image'] = $image;
         }
-        $data['image'] = $image;
+
+        if($request->tags){
+            $post->tags()->sync($request->tags);
+        }
         $post->update($data);
 
         session()->flash('success','Post Updated Successfully.');
