@@ -13,6 +13,7 @@
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
 
+
 Auth::routes();
 
 Route::middleware('auth')->group(function (){
@@ -45,4 +46,10 @@ Route::middleware('auth')->group(function (){
 
 });
 
+
+
 Route::get('/posts/{post}','Blog\PostsController@show')->name('blog.show');
+
+Route::get('/blog/categories/{category}','Blog\PostsController@category')->name('blog.category');
+Route::get('/blog/tags/{tag}','Blog\PostsController@tag')->name('blog.tag');
+
