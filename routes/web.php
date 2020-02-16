@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index')->name('welcome');
 
 Auth::routes();
 
@@ -44,3 +44,5 @@ Route::middleware('auth')->group(function (){
     Route::put('users/profile','UsersController@update')->name('users.update-profile');
 
 });
+
+Route::get('/posts/{post}','Blog\PostsController@show')->name('blog.show');
