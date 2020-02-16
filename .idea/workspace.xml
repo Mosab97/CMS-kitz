@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="57ce87e4-bd4c-4ab4-ba94-c8948ada472e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Blog/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Blog/PostsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Blog/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Blog/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/blog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/blog.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +182,8 @@
       <workItem from="1581707672585" duration="8493000" />
       <workItem from="1581738103861" duration="6658000" />
       <workItem from="1581769746988" duration="5331000" />
-      <workItem from="1581819927567" duration="9627000" />
+      <workItem from="1581819927567" duration="9893000" />
+      <workItem from="1581836436048" duration="677000" />
     </task>
     <servers />
   </component>
@@ -201,10 +199,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581646709828" />
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1581819978952">
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1581836450662">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581819978952" />
+    <state x="379" y="189" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581836450662" />
     <state x="492" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581649223238">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

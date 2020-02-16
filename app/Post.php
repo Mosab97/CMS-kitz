@@ -11,6 +11,7 @@ class Post extends Model
     use SoftDeletes;
     protected $fillable = ['title','description','content','image','published_at','category_id','user_id'];
 
+    protected $dates = ['published_at'];
     public  function deleteImage(){
         Storage::delete($this->image);
     }
@@ -35,8 +36,12 @@ class Post extends Model
     public  function scopeSearched($query){
         $search = request()->query('search');
         if(!$search){
-            return $query;
+            return $query->Published();
         }
-        return $query->where('title','like',"%{$search}%");
+        return $query->Published()->where('title','like',"%{$search}%");
+    }
+
+    public function scopePublished($query){
+        return $query->where('published_at', '<=' ,now());
     }
 }
