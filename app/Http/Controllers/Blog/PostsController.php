@@ -20,15 +20,11 @@ class PostsController extends Controller
 
     public function category(Category $category)
     {
-        $search = \request()->query('search');
-        if ($search) {
-            $posts = $category->posts()->where('title', 'LIKE', "%{$search}%")->simplePaginate(2);
-        } else {
-            $posts = $category->posts()->simplePaginate(2);
-        }
+
+
         return view('blog.category', [
             'category' => $category,
-            'posts' => $posts,
+            'posts' =>$category->posts()->searched()->simplePaginate(3),
             'categories' => Category::all(),
             'tags' => Tag::all(),
         ]);
@@ -37,17 +33,12 @@ class PostsController extends Controller
     public function tag(Tag $tag)
     {
 
-        $search = \request()->query('search');
-        if ($search) {
-            $posts = $tag->posts()->where('title', 'LIKE', "%{$search}%")->simplePaginate(2);
-        } else {
-            $posts = $tag->posts()->simplePaginate(2);
-        }
+
 
 
         return view('blog.tag', [
             'tag' => $tag,
-            'posts' => $posts,
+            'posts' =>$tag->posts()->searched()->simplePaginate(3),
             'categories' => Category::all(),
             'tags' => Tag::all(),
         ]);

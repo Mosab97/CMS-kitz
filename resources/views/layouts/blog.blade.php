@@ -83,5 +83,9 @@
 <script src="{{asset('theme/assets/js/page.min.js')}}"></script>
 <script src="{{asset('theme/assets/js/script.js')}}"></script>
 
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e48d52189e1e057"></script>
+
+
+
 </body>
 </html>
